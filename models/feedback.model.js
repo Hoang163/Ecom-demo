@@ -1,8 +1,9 @@
-// models/feedback.model.js
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('Feedback', {
+  return sequelize.define('Feedback', {
       id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
       comment: DataTypes.TEXT,
-      rate_star: DataTypes.INTEGER
-    });
-  };
+      rate_star: { type: DataTypes.INTEGER, allowNull: false },
+      //createdAt: { type: DataTypes.DATE, allowNull: false },
+      //updatedAt: { type: DataTypes.DATE, allowNull: false }
+  });
+};
